@@ -1,0 +1,197 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 200;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 300px;
+  background: var(--charcoal);
+  border-right: 1px solid var(--border2);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.drawerHeader {
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+  transition: color 150ms;
+}
+
+.closeBtn:hover {
+  color: var(--cream);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: var(--charcoal2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display), serif;
+  font-size: 18px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.userName {
+  font-family: var(--font-display), serif;
+  font-size: 16px;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.userSub {
+  font-family: var(--font-body), sans-serif;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.userSub.tier {
+  color: var(--gold);
+}
+
+.sectionLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 16px 20px 8px;
+}
+
+.rule {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 150ms;
+}
+
+.menuLink:hover {
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.linkIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.linkText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.linkLabel {
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  color: var(--cream);
+}
+
+.linkDesc {
+  font-family: var(--font-body), sans-serif;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.chevron {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.drawerFooter {
+  margin-top: auto;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.signInBtn {
+  width: 100%;
+  padding: 12px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-body), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 200ms;
+}
+
+.signInBtn:hover {
+  background: var(--gold-light);
+}
+
+.signOutBtn {
+  width: 100%;
+  padding: 11px;
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-body), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.signOutBtn:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.version {
+  text-align: center;
+  font-family: var(--font-body), sans-serif;
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 12px;
+  letter-spacing: 0.08em;
+}
+
