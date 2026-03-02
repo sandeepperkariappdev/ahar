@@ -1,5 +1,5 @@
+import { createServerClient } from "@supabase/ssr";
 import { NextResponse } from "next/server";
-import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
 
 const protectedPaths = [
   "/account",
@@ -9,37 +9,55 @@ const protectedPaths = [
   "/checkout",
 ];
 
-export async function middleware(req) {
-  const res = NextResponse.next();
+export async function middleware(request) {
+  let response = NextResponse.next({
+    request: {
+      headers: request.headers,
+    },
+  });
 
-  const supabase = createMiddlewareClient(
-    { req, res },
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
-      supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
-      supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value, options }) =>
+            request.cookies.set(name, value)
+          );
+          response = NextResponse.next({
+            request,
+          });
+          cookiesToSet.forEach(({ name, value, options }) =>
+            response.cookies.set(name, value, options)
+          );
+        },
+      },
     }
   );
 
+  // This refreshes the session if it's expired
   const {
-    data: { session },
-  } = await supabase.auth.getSession();
+    data: { user },
+  } = await supabase.auth.getUser();
 
-  const { pathname } = req.nextUrl;
-
-  const isProtected = protectedPaths.some((path) =>
-    pathname === path || pathname.startsWith(path + "/")
+  const { pathname } = request.nextUrl;
+  const isProtected = protectedPaths.some(
+    (path) => pathname === path || pathname.startsWith(path + "/")
   );
 
-  if (!session && isProtected) {
-    const loginUrl = new URL("/login", req.url);
+  if (!user && isProtected) {
+    const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set("redirect", pathname);
     return NextResponse.redirect(loginUrl);
   }
 
-  return res;
+  return response;
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  matcher:'',
 };
-
