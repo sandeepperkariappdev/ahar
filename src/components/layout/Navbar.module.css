@@ -1,0 +1,131 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    height: 68px;
+    padding: 0 48px;
+  }
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: opacity 200ms;
+}
+
+.hamburger:hover span {
+  opacity: 0.7;
+}
+
+.logo {
+  font-family: var(--font-display), serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    font-size: 26px;
+    position: static;
+    transform: none;
+  }
+}
+
+.desktopLinks {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopLinks {
+    display: flex;
+    gap: 36px;
+  }
+}
+
+.desktopLinks a {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 150ms;
+}
+
+.desktopLinks a:hover {
+  color: var(--gold);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.iconBtn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  color: var(--cream);
+  opacity: 0.8;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: opacity 150ms;
+}
+
+.iconBtn:hover {
+  opacity: 1;
+}
+
+.iconBtn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  background: var(--gold);
+  color: var(--black);
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body), sans-serif;
+}
+
+
