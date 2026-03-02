@@ -1,0 +1,45 @@
+.bar {
+  width: 100%;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-body), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 9px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.track {
+  display: inline-flex;
+  gap: 48px;
+}
+
+@media (max-width: 767px) {
+  .track {
+    animation: marquee 18s linear infinite;
+  }
+}
+
+@media (min-width: 768px) {
+  .bar {
+    text-align: center;
+  }
+
+  .track {
+    animation: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
