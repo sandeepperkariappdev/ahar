@@ -1,0 +1,109 @@
+/* ============================================================
+   AHAR — Theme 5: Blush & Bronze
+   Romantic, feminine, and softly luxurious.
+   Warm rose tones with copper-bronze accents.
+   File: globals.theme-blush-bronze.css
+   ============================================================ */
+
+:root {
+  --background: #faf4f0;       /* Soft blush white — page background  */
+  --foreground: #4a2828;       /* Deep rose — main text               */
+
+  --black:       #4a2828;      /* Deep rose replaces black            */
+  --charcoal:    #7a3d3d;      /* Rose replaces charcoal              */
+  --charcoal2:   #8f4f4f;      /* Mid rose replaces charcoal2         */
+
+  --gold:        #9b6b4a;      /* Copper replaces gold                */
+  --gold-light:  #b5825e;      /* Lighter copper replaces gold-light  */
+  --gold-dim:    #c9a882;      /* Bronze replaces gold-dim            */
+  --gold-glow:   rgba(155, 107, 74, 0.16);
+
+  --cream:       #f0e4dc;      /* Petal pink replaces cream           */
+  --muted:       #b07878;      /* Dusty rose replaces muted          */
+
+  --border:      #eed8d0;      /* Blush border                        */
+  --border2:     #e2c8bc;      /* Slightly stronger border            */
+
+  --red:         #b03030;      /* Deeper red on blush bg              */
+  --green:       #3a7040;      /* Earthy green on blush bg            */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #faf4f0;
+    --foreground: #4a2828;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Jost", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes shimmer {
+  from { background-position: -200%; }
+  to   { background-position:  200%; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes drawCheck {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}

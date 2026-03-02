@@ -1,0 +1,109 @@
+/* ============================================================
+   AHAR — Theme 1: Ivory & Sage
+   Light, fresh, and organically luxurious.
+   Natural greens with warm ivory and taupe accents.
+   File: globals.theme-ivory-sage.css
+   ============================================================ */
+
+:root {
+  --background: #f8f4ee;       /* Ivory — page background             */
+  --foreground: #2c3e2d;       /* Deep sage — main text               */
+
+  --black:       #2c3e2d;      /* Deep sage replaces black            */
+  --charcoal:    #3d5a40;      /* Sage replaces charcoal              */
+  --charcoal2:   #4a6b4d;      /* Mid sage replaces charcoal2         */
+
+  --gold:        #8a7355;      /* Warm taupe replaces gold            */
+  --gold-light:  #a08d70;      /* Lighter taupe replaces gold-light   */
+  --gold-dim:    #c8b89a;      /* Sand replaces gold-dim              */
+  --gold-glow:   rgba(138, 115, 85, 0.16);
+
+  --cream:       #f0e8dc;      /* Linen white replaces cream          */
+  --muted:       #7a6e62;      /* Warm grey replaces muted            */
+
+  --border:      #ddd5c4;      /* Warm linen border                   */
+  --border2:     #cfc4b0;      /* Slightly stronger border            */
+
+  --red:         #b03a2e;      /* Slightly muted red for light bg     */
+  --green:       #2d7a3a;      /* Deeper green for light bg           */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f8f4ee;
+    --foreground: #2c3e2d;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Jost", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes shimmer {
+  from { background-position: -200%; }
+  to   { background-position:  200%; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes drawCheck {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}

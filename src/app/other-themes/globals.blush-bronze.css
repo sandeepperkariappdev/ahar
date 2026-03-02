@@ -1,0 +1,103 @@
+/* ============================================================
+   AHAR — Theme 6: Blush & Bronze
+   Romantic, feminine, and softly luxurious.
+   Copper/bronze replaces gold. Deep rose replaces black.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+:root {
+  --background:  #ffffff;
+  --foreground:  #4a2828;
+
+  --black:       #faf4f0;       /* page background — soft blush white */
+  --charcoal:    #ffffff;       /* cards / surfaces */
+  --charcoal2:   #f5ece6;       /* elevated surfaces */
+
+  /* Accent: copper/bronze replaces gold */
+  --gold:        #9b6b4a;       /* copper — primary accent */
+  --gold-light:  #b8804e;       /* copper hover */
+  --gold-dim:    #c9a882;       /* bronze — muted accent */
+  --gold-glow:   rgba(155, 107, 74, 0.16);
+
+  /* Body text — deep rose instead of cream */
+  --cream:       #4a2828;
+
+  --muted:       #b09090;       /* dusty rose muted text */
+
+  --border:      #f0e4dc;
+  --border2:     #e8d8ce;
+
+  --red:         #c9726a;       /* dusty rose — softer red */
+  --green:       #5a8a60;
+}
+
+/* ── RESETS ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--black);     /* soft blush */
+  color: var(--cream);                /* deep rose text */
+  font-family: 'Jost', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ── ANIMATIONS ──────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes shimmer {
+  from { background-position: -200%; }
+  to   { background-position:  200%; }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes drawCheck {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}
