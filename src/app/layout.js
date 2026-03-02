@@ -15,8 +15,9 @@ const fontBody = Jost({
 });
 
 export const metadata = {
-  title: "Ahar",
-  description: "Ahar – elegant ordering, rewards, and reservations experience.",
+  title: "AHAR — Fine Dining",
+  description: "Experience an exquisite culinary journey at AHAR restaurant.",
+  themeColor: "#D4AF37",
 };
 
 export default function RootLayout({ children }) {
