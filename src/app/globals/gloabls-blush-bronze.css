@@ -1,0 +1,204 @@
+/* ============================================================
+   AHAR — globals.css  ·  Theme 6: Blush & Bronze
+   Soft blush bg + deep rose headings + copper/bronze accent.
+   Romantic, intimate, feminine luxury.
+   ============================================================ */
+
+   :root {
+
+    /* ── Brand Palette ── */
+    --gold:           #9b6b4a;
+    --gold-light:     #b8825e;
+    --gold-dim:       #c9a882;
+    --gold-glow:      rgba(155, 107, 74, 0.16);
+  
+    /* ── Surfaces ── */
+    --black:          #faf4f0;   /* soft blush page background        */
+    --charcoal:       #ffffff;   /* card / section background         */
+    --charcoal2:      #f5ece6;   /* input bg, petal pink alt surface  */
+  
+    /* ── Text ── */
+    --cream:          #4a2828;   /* deep rose — headings & body       */
+    --muted:          #b08888;   /* dusty rose muted text             */
+  
+    /* ── Borders ── */
+    --border:         #f0ddd5;
+    --border2:        #e8d0c8;
+  
+    /* ── Status ── */
+    --red:            #b53a2a;
+    --green:          #2d7a3a;
+  
+    /* ── Page ── */
+    --page-bg:               var(--black);
+    --page-text:             var(--cream);
+  
+    /* ── Announcement Bar ── */
+    --announce-bg:           #7a3d3d;
+    --announce-text:         #c9a882;
+  
+    /* ── Navbar ── */
+    --nav-bg:                rgba(250, 244, 240, 0.96);
+    --nav-border:            #c9a882;
+    --nav-logo:              #7a3d3d;
+    --nav-link:              #b08888;
+    --nav-link-active:       #9b6b4a;
+    --nav-icon:              #4a2828;
+    --nav-badge-bg:          #9b6b4a;
+    --nav-badge-text:        #faf4f0;
+    --nav-signin:            #9b6b4a;
+  
+    /* ── Hero ── */
+    --hero-bg-from:          #f5ece5;
+    --hero-bg-mid:           #f7f0ea;
+    --hero-bg-to:            #faf4f0;
+    --hero-glow-primary:     rgba(155, 107, 74, 0.07);
+    --hero-glow-secondary:   rgba(122, 61, 61, 0.04);
+    --hero-grid-line:        rgba(74, 40, 40, 0.02);
+    --hero-eyebrow:          #c9726a;
+    --hero-title:            #4a2828;
+    --hero-subtitle:         rgba(74, 40, 40, 0.55);
+    --hero-divider-line:     #c9a882;
+    --hero-divider-symbol:   #9b6b4a;
+  
+    /* ── Buttons ── */
+    --btn-primary-bg:        #9b6b4a;
+    --btn-primary-text:      #faf4f0;
+    --btn-primary-hover:     #7a4e30;
+    --btn-outline-border:    #7a3d3d;
+    --btn-outline-text:      #7a3d3d;
+    --btn-outline-hover-bg:  #7a3d3d;
+    --btn-outline-hover-text:#faf4f0;
+  
+    /* ── Sections ── */
+    --section-bg:            #faf4f0;
+    --section-alt-bg:        #f5ece6;
+    --section-eyebrow:       #c9726a;
+    --section-title:         #4a2828;
+    --section-rule:          #c9a882;
+  
+    /* ── Dish Cards ── */
+    --card-bg:               #ffffff;
+    --card-border:           #f0ddd5;
+    --card-border-hover:     #9b6b4a;
+    --card-img-from:         #f0e4dc;
+    --card-img-to:           #e8d8d0;
+    --card-img-overlay:      rgba(250, 244, 240, 0.4);
+    --card-name:             #4a2828;
+    --card-desc:             #b08888;
+    --card-price:            #9b6b4a;
+    --card-rating:           #b08888;
+    --card-btn-border:       #f0ddd5;
+    --card-btn-text:         #7a3d3d;
+    --card-btn-hover-bg:     #9b6b4a;
+    --card-btn-hover-text:   #faf4f0;
+    --badge-v-bg:            rgba(45, 122, 58, 0.10);
+    --badge-v-text:          #2d7a3a;
+    --badge-v-border:        rgba(45, 122, 58, 0.22);
+    --badge-gf-bg:           rgba(201, 114, 106, 0.10);
+    --badge-gf-text:         #c9726a;
+    --badge-gf-border:       rgba(201, 114, 106, 0.25);
+  
+    /* ── Skeleton ── */
+    --shimmer-from:          #f5ece6;
+    --shimmer-to:            #ede4dc;
+  
+    /* ── Reviews ── */
+    --review-section-bg:     #f5ece6;
+    --review-card-bg:        #ffffff;
+    --review-card-border:    #f0ddd5;
+    --review-quote-char:     #c9a882;
+    --review-text:           #4a2828;
+    --review-stars:          #9b6b4a;
+    --review-author:         #b08888;
+    --review-author-name:    #9b6b4a;
+  
+    /* ── CTA Banner ── */
+    --cta-bg-from:           #f5ece6;
+    --cta-bg-to:             #ede4dc;
+    --cta-border-top:        #f0ddd5;
+    --cta-eyebrow:           #c9726a;
+    --cta-title:             #4a2828;
+    --cta-sub:               #b08888;
+    --cta-rule:              #c9a882;
+  
+    /* ── Footer ── */
+    --footer-bg:             #4a2828;
+    --footer-border:         #6a3838;
+    --footer-brand:          #c9a882;
+    --footer-tagline:        rgba(176, 136, 136, 0.8);
+    --footer-text:           rgba(176, 136, 136, 0.8);
+    --footer-link:           rgba(176, 136, 136, 0.8);
+    --footer-link-hover:     #faf4f0;
+    --footer-heading:        #c9a882;
+    --footer-social-border:  #6a3838;
+    --footer-social-text:    rgba(176, 136, 136, 0.8);
+    --footer-social-hover:   #c9a882;
+    --footer-copy:           rgba(176, 136, 136, 0.5);
+  
+    /* ── Side Menu ── */
+    --sidemenu-bg:           #ffffff;
+    --sidemenu-border:       #f0ddd5;
+    --sidemenu-overlay:      rgba(74, 40, 40, 0.5);
+    --sidemenu-avatar-border:#9b6b4a;
+    --sidemenu-avatar-bg:    #f5ece6;
+    --sidemenu-avatar-text:  #7a3d3d;
+    --sidemenu-name:         #4a2828;
+    --sidemenu-sub:          #b08888;
+    --sidemenu-tier:         #9b6b4a;
+    --sidemenu-label:        #b08888;
+    --sidemenu-rule:         #f0ddd5;
+    --sidemenu-link-hover:   rgba(155, 107, 74, 0.06);
+    --sidemenu-icon-bg:      rgba(201, 114, 106, 0.08);
+    --sidemenu-icon-border:  rgba(201, 114, 106, 0.15);
+    --sidemenu-link-label:   #4a2828;
+    --sidemenu-link-desc:    #b08888;
+    --sidemenu-chevron:      #b08888;
+    --sidemenu-footer-border:#f0ddd5;
+  
+    /* ── Auth Modal ── */
+    --modal-bg:              #ffffff;
+    --modal-overlay:         rgba(74, 40, 40, 0.55);
+    --modal-border:          #f0ddd5;
+    --modal-header-bg:       #faf4f0;
+    --input-bg:              #f5ece6;
+    --input-border:          #e8d0c8;
+    --input-border-focus:    #9b6b4a;
+    --input-text:            #4a2828;
+    --input-placeholder:     #c0a0a0;
+    --tab-inactive:          #b08888;
+    --tab-active:            #9b6b4a;
+    --tab-underline:         #9b6b4a;
+    --social-bg:             #f5ece6;
+    --social-border:         #e8d0c8;
+    --social-text:           #4a2828;
+    --social-hover-border:   #9b6b4a;
+    --link-color:            #9b6b4a;
+    --checkbox-accent:       #7a3d3d;
+    --error-color:           #b53a2a;
+    --success-color:         #2d7a3a;
+  
+    /* ── Scroll-to-top ── */
+    --scroll-btn-bg:         #9b6b4a;
+    --scroll-btn-text:       #faf4f0;
+    --scroll-btn-hover:      #b8825e;
+    --scroll-btn-shadow:     rgba(155, 107, 74, 0.3);
+  
+    /* ── Focus ring ── */
+    --focus-ring:            #9b6b4a;
+  }
+  
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; max-width: 100vw; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body { background-color: var(--page-bg); color: var(--page-text); font-family: var(--font-body), 'Jost', sans-serif; max-width: 100vw; overflow-x: hidden; }
+  h1,h2,h3,h4,h5,h6 { font-family: var(--font-display), 'Cormorant Garamond', serif; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  :focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+  
+  @keyframes fadeIn    { from { opacity: 0; }                              to { opacity: 1; } }
+  @keyframes slideUp   { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  @keyframes shimmer   { 0%   { background-position: 200% 0; }             100% { background-position: -200% 0; } }
+  @keyframes spin      { from { transform: rotate(0deg); }                 to { transform: rotate(360deg); } }
+  @keyframes drawCheck { from { stroke-dashoffset: 100; }                  to { stroke-dashoffset: 0; } }
+  @keyframes marquee   { from { transform: translateX(0); }                to { transform: translateX(-50%); } }
