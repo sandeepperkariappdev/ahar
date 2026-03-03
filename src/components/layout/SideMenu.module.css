@@ -1,7 +1,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--sidemenu-overlay);
   z-index: 200;
 }
 
@@ -11,8 +11,8 @@
   left: 0;
   height: 100%;
   width: 300px;
-  background: var(--charcoal);
-  border-right: 1px solid var(--border2);
+  background: var(--sidemenu-bg);
+  border-right: 1px solid var(--sidemenu-border);
   z-index: 201;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
 
 .drawerHeader {
   padding: 24px 20px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--sidemenu-rule);
   position: relative;
 }
 
@@ -30,7 +30,7 @@
   top: 16px;
   right: 16px;
   font-size: 20px;
-  color: var(--muted);
+  color: var(--sidemenu-link-desc);
   cursor: pointer;
   background: none;
   border: none;
@@ -46,32 +46,32 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1.5px solid var(--gold);
-  background: var(--charcoal2);
+  border: 1.5px solid var(--sidemenu-avatar-border);
+  background: var(--sidemenu-avatar-bg);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display), serif;
   font-size: 18px;
-  color: var(--gold);
+  color: var(--sidemenu-avatar-text);
   margin-bottom: 12px;
 }
 
 .userName {
   font-family: var(--font-display), serif;
   font-size: 16px;
-  color: var(--cream);
+  color: var(--sidemenu-name);
   margin-bottom: 4px;
 }
 
 .userSub {
   font-family: var(--font-body), sans-serif;
   font-size: 10px;
-  color: var(--muted);
+  color: var(--sidemenu-sub);
 }
 
 .userSub.tier {
-  color: var(--gold);
+  color: var(--sidemenu-tier);
 }
 
 .sectionLabel {
@@ -79,13 +79,13 @@
   font-size: 9px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--sidemenu-label);
   padding: 16px 20px 8px;
 }
 
 .rule {
   height: 1px;
-  background: var(--border);
+  background: var(--sidemenu-rule);
   margin: 4px 0;
 }
 
@@ -99,15 +99,15 @@
 }
 
 .menuLink:hover {
-  background: rgba(212, 175, 55, 0.06);
+  background: var(--sidemenu-link-hover);
 }
 
 .linkIcon {
   width: 32px;
   height: 32px;
   border-radius: 6px;
-  background: rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.12);
+  background: var(--sidemenu-icon-bg);
+  border: 1px solid var(--sidemenu-icon-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,31 +125,31 @@
 .linkLabel {
   font-family: var(--font-body), sans-serif;
   font-size: 13px;
-  color: var(--cream);
+  color: var(--sidemenu-link-label);
 }
 
 .linkDesc {
   font-family: var(--font-body), sans-serif;
   font-size: 10px;
-  color: var(--muted);
+  color: var(--sidemenu-link-desc);
 }
 
 .chevron {
   font-size: 16px;
-  color: var(--muted);
+  color: var(--sidemenu-chevron);
 }
 
 .drawerFooter {
   margin-top: auto;
   padding: 20px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--sidemenu-footer-border);
 }
 
 .signInBtn {
   width: 100%;
   padding: 12px;
-  background: var(--gold);
-  color: var(--black);
+  background: var(--btn-primary-bg);  
+  color: var(--btn-primary-text);
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -162,36 +162,127 @@
 }
 
 .signInBtn:hover {
-  background: var(--gold-light);
+  background: var(--btn-primary-hover);
 }
 
 .signOutBtn {
   width: 100%;
   padding: 11px;
-  background: transparent;
-  color: var(--gold);
+  background: transparent;  
+  color: var(--btn-outline-text);
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--btn-outline-border);
   border-radius: 2px;
   cursor: pointer;
   transition: all 200ms;
 }
 
 .signOutBtn:hover {
-  background: var(--gold);
-  color: var(--black);
+  background: var(--btn-outline-hover-bg);
+  color: var(--btn-outline-hover-text); 
 }
 
 .version {
   text-align: center;
   font-family: var(--font-body), sans-serif;
   font-size: 9px;
-  color: var(--muted);
+  color: var(--sidemenu-label);
   margin-top: 12px;
   letter-spacing: 0.08em;
 }
 
+/*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILE 3 — src/components/layout/SideMenu.module.css
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Make these exact replacements:
+
+  background: rgba(0,0,0,0.7)                   [on .overlay]
+  → background: var(--sidemenu-overlay)
+
+  background: var(--charcoal)                   [on .drawer]
+  → background: var(--sidemenu-bg)
+
+  border-right: 1px solid var(--border2)        [on .drawer]
+  → border-right: 1px solid var(--sidemenu-border)
+
+  border-bottom: 1px solid var(--border)        [on .drawerHeader]
+  → border-bottom: 1px solid var(--sidemenu-rule)
+
+  border: 1.5px solid var(--gold)               [on .avatar]
+  → border: 1.5px solid var(--sidemenu-avatar-border)
+
+  background: var(--charcoal2)                  [on .avatar]
+  → background: var(--sidemenu-avatar-bg)
+
+  color: var(--gold)                            [on .avatar]
+  → color: var(--sidemenu-avatar-text)
+
+  color: var(--cream)                           [on .userName]
+  → color: var(--sidemenu-name)
+
+  color: var(--muted)                           [on .userSub]
+  → color: var(--sidemenu-sub)
+
+  color: var(--gold)                            [on .userSub.tier]
+  → color: var(--sidemenu-tier)
+
+  color: var(--muted)                           [on .sectionLabel]
+  → color: var(--sidemenu-label)
+
+  background: var(--border)                     [on .rule]
+  → background: var(--sidemenu-rule)
+
+  background: rgba(212,175,55,0.06)             [on .menuLink:hover]
+  → background: var(--sidemenu-link-hover)
+
+  background: rgba(212,175,55,0.08)             [on .linkIcon]
+  → background: var(--sidemenu-icon-bg)
+
+  border: 1px solid rgba(212,175,55,0.12)       [on .linkIcon]
+  → border: 1px solid var(--sidemenu-icon-border)
+
+  color: var(--cream)                           [on .linkLabel]
+  → color: var(--sidemenu-link-label)
+
+  color: var(--muted)                           [on .linkDesc]
+  → color: var(--sidemenu-link-desc)
+
+  color: var(--muted)                           [on .chevron]
+  → color: var(--sidemenu-chevron)
+
+  border-top: 1px solid var(--border)           [on .drawerFooter]
+  → border-top: 1px solid var(--sidemenu-footer-border)
+
+  color: var(--muted)                           [on .closeBtn]
+  → color: var(--sidemenu-link-desc)
+
+  color: var(--muted)                           [on .version]
+  → color: var(--sidemenu-label)
+
+  background: var(--gold)                       [on .signInBtn]
+  → background: var(--btn-primary-bg)
+
+  color: var(--black)                           [on .signInBtn]
+  → color: var(--btn-primary-text)
+
+  background: var(--gold-light)                 [on .signInBtn:hover]
+  → background: var(--btn-primary-hover)
+
+  color: var(--gold)                            [on .signOutBtn]
+  → color: var(--btn-outline-text)
+
+  border: 1px solid var(--gold)                 [on .signOutBtn]
+  → border: 1px solid var(--btn-outline-border)
+
+  background: var(--gold)                       [on .signOutBtn:hover]
+  → background: var(--btn-outline-hover-bg)
+
+  color: var(--black)                           [on .signOutBtn:hover]
+  → color: var(--btn-outline-hover-text)
+*/

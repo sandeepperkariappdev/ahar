@@ -1,7 +1,7 @@
 .bar {
   width: 100%;
-  background: var(--gold);
-  color: var(--black);
+  background: var(--announce-bg);
+  color: var(--announce-text);
   font-family: var(--font-body), sans-serif;
   font-size: 10px;
   font-weight: 600;

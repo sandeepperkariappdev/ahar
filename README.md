@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+Once you make these swaps, switching the entire site from the current dark gold theme to — say — a light cream theme with navy accents means editing only these lines in globals.css, nothing else:
+
+--page-bg:        #faf8f4;   /* was var(--black) */
+--page-text:      #1a1a2e;   /* was var(--cream) */
+--card-bg:        #ffffff;   /* was var(--charcoal) */
+--section-bg:     #faf8f4;   /* was var(--black) */
+--section-alt-bg: #f0ebe0;   /* was var(--charcoal) */
+--gold:           #c9a84c;   /* adjust accent to taste */

@@ -1,4 +1,5 @@
-import "./globals.css";
+//import "./globals.css";
+import "./globals/globals-ivory.css";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 
 const fontDisplay = Cormorant_Garamond({

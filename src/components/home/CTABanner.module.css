@@ -1,8 +1,8 @@
 .section {
   padding: 56px 24px;
-  background: linear-gradient(135deg, var(--charcoal) 0%, #100e08 100%);
+  background: linear-gradient(135deg, var(--cta-bg-from) 0%, var(--cta-bg-to) 100%);
   text-align: center;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--cta-border-top);
 }
 
 .eyebrow {
@@ -10,7 +10,7 @@
   font-size: 10px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--cta-eyebrow);
   margin-bottom: 16px;
 }
 
@@ -19,7 +19,7 @@
   font-size: 26px;
   font-weight: 300;
   letter-spacing: 0.12em;
-  color: var(--cream);
+  color: var(--cta-title);
   margin-bottom: 12px;
 }
 
@@ -32,7 +32,7 @@
 .sub {
   font-family: var(--font-body), sans-serif;
   font-size: 12px;
-  color: var(--muted);
+  color: var(--cta-sub); /* color: var(--muted);*/
   letter-spacing: 0.08em;
   margin-bottom: 24px;
 }
@@ -40,7 +40,7 @@
 .rule {
   width: 40px;
   height: 1px;
-  background: var(--gold);
+  background: var(--cta-rule);
   margin: 0 auto 24px;
 }
 
@@ -55,8 +55,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--gold);
-  color: var(--black);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -70,7 +70,7 @@
 }
 
 .btnGold:hover {
-  background: var(--gold-light);
+  background: var(--btn-primary-hover);
 }
 
 .btnOutline {
@@ -78,7 +78,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  color: var(--gold);
+  border: 1px solid var(--btn-outline-border);
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -91,7 +91,54 @@
 }
 
 .btnOutline:hover {
-  background: var(--gold);
-  color: var(--black);
+  background: var(--btn-outline-hover-bg);
+  color: var(--btn-outline-hover-text);
 }
 
+/*
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILE 5 — src/components/home/CTABanner.module.css
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Make these exact replacements:
+
+  background: linear-gradient(135deg, var(--charcoal) 0%, #100e08 100%)   [on .section]
+  → background: linear-gradient(135deg, var(--cta-bg-from) 0%, var(--cta-bg-to) 100%)
+
+  border-top: 1px solid var(--border)   [on .section]
+  → border-top: 1px solid var(--cta-border-top)
+
+  color: var(--gold)              [on .eyebrow]
+  → color: var(--cta-eyebrow)
+
+  color: var(--cream)             [on .title]
+  → color: var(--cta-title)
+
+  color: var(--muted)             [on .sub]
+  → color: var(--cta-sub)
+
+  background: var(--gold)         [on .rule]
+  → background: var(--cta-rule)
+
+  background: var(--gold)         [on .btnGold]
+  → background: var(--btn-primary-bg)
+
+  color: var(--black)             [on .btnGold]
+  → color: var(--btn-primary-text)
+
+  background: var(--gold-light)   [on .btnGold:hover]
+  → background: var(--btn-primary-hover)
+
+  border: 1px solid var(--gold)   [on .btnOutline]
+  → border: 1px solid var(--btn-outline-border)
+
+  color: var(--gold)              [on .btnOutline] // didnot find this one.
+  → color: var(--btn-outline-text)
+
+  background: var(--gold)         [on .btnOutline:hover]
+  → background: var(--btn-outline-hover-bg)
+
+  color: var(--black)             [on .btnOutline:hover]
+  → color: var(--btn-outline-hover-text)
+*/

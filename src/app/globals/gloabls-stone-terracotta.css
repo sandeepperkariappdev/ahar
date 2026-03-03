@@ -1,0 +1,328 @@
+/*:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --black: #0a0a0a;
+  --charcoal: #1a1a1a;
+  --charcoal2: #222222;
+  --gold: #d4af37;
+  --gold-light: #e8c547;
+  --gold-dim: #b8960c;
+  --gold-glow: rgba(212, 175, 55, 0.18);
+  --cream: #f5f0e8;
+  --muted: #888888;
+  --border: #2a2a2a;
+  --border2: #333333;
+  --red: #c0392b;
+  --green: #2ecc71;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f5f0e8;
+  font-family: "Jost", sans-serif;
+} 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200%;
+  }
+  to {
+    background-position: 200%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes drawCheck {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}*/
+/* ============================================================
+   AHAR — globals.css
+   THEME SYSTEM: Change colors here only. Every component
+   references these tokens via var(). Nothing else needs editing.
+   ============================================================ */
+
+/* ── Google Fonts are loaded via next/font in layout.js ── */
+
+/* ============================================================
+   1. DESIGN TOKENS — THE SINGLE SOURCE OF TRUTH
+   ============================================================ */
+
+
+   /*Stone Terracota*/
+   :root {
+    
+    --gold:           #b5522a;  --gold-light:     #d06535;  --gold-dim:       #d4b090;
+    --gold-glow:      rgba(181,82,42,0.15);
+    --black:          #f5f0eb;  --charcoal:       #ffffff;  --charcoal2:      #ede8e0;
+    --cream:          #3a2e26;  --muted:          #9a8070;
+    --border:         #ddd0c0;  --border2:        #ccc0aa;
+    --red:            #b53a2a;  --green:          #2d7a3a;
+    --page-bg:        var(--black);           --page-text:      var(--cream);
+    --announce-bg:    #b5522a;               --announce-text:  #f5f0eb;
+    --nav-bg:         rgba(245,240,235,0.96); --nav-border:     #d4b090;
+    --nav-logo:       #3a2e26;               --nav-link:       var(--muted);
+    --nav-link-active:#b5522a;               --nav-icon:       var(--cream);
+    --nav-badge-bg:   #b5522a;               --nav-badge-text: #f5f0eb;
+    --nav-signin:     #b5522a;
+    --hero-bg-from:   #ede5da;  --hero-bg-mid:    #f0ece4;  --hero-bg-to:     #f5f0eb;
+    --hero-glow-primary:rgba(181,82,42,0.07);--hero-glow-secondary:rgba(181,82,42,0.04);
+    --hero-grid-line: rgba(58,46,38,0.03);   --hero-eyebrow:   #b5522a;
+    --hero-title:     #3a2e26;               --hero-subtitle:  rgba(58,46,38,0.55);
+    --hero-divider-line:#d4c5b0;             --hero-divider-symbol:#b5522a;
+    --btn-primary-bg: #b5522a;               --btn-primary-text:#f5f0eb;
+    --btn-primary-hover:#943e1e;             --btn-outline-border:#3a2e26;
+    --btn-outline-text:#3a2e26;              --btn-outline-hover-bg:#3a2e26;
+    --btn-outline-hover-text:#f5f0eb;
+    --section-bg:     #f5f0eb;               --section-alt-bg: #ede5da;
+    --section-eyebrow:#b5522a;               --section-title:  #3a2e26;
+    --section-rule:   #d4b090;
+    --card-bg:        #ffffff;               --card-border:    #ddd0c0;
+    --card-border-hover:#b5522a;             --card-img-from:  #e8ddd0;
+    --card-img-to:    #ddd0c0;               --card-img-overlay:rgba(245,240,235,0.4);
+    --card-name:      #3a2e26;               --card-desc:      #9a8070;
+    --card-price:     #b5522a;               --card-rating:    #9a8070;
+    --card-btn-border:#ddd0c0;               --card-btn-text:  #3a2e26;
+    --card-btn-hover-bg:#b5522a;             --card-btn-hover-text:#f5f0eb;
+    --badge-v-bg:     rgba(45,122,58,0.12);  --badge-v-text:   #2d7a3a;
+    --badge-v-border: rgba(45,122,58,0.25);  --badge-gf-bg:    rgba(181,82,42,0.10);
+    --badge-gf-text:  #b5522a;               --badge-gf-border:rgba(181,82,42,0.25);
+    --shimmer-from:   #ede5da;               --shimmer-to:     #e5ddd0;
+    --review-section-bg:#ede5da;             --review-card-bg: #ffffff;
+    --review-card-border:#ddd0c0;            --review-quote-char:#d4b090;
+    --review-text:    #3a2e26;               --review-stars:   #b5522a;
+    --review-author:  #9a8070;               --review-author-name:#b5522a;
+    --cta-bg-from:    #ede5da;               --cta-bg-to:      #e5ddd0;
+    --cta-border-top: #ddd0c0;               --cta-eyebrow:    #b5522a;
+    --cta-title:      #3a2e26;               --cta-sub:        #9a8070;
+    --cta-rule:       #d4b090;
+    --footer-bg:      #3a2e26;               --footer-border:  #4a3c32;
+    --footer-brand:   #d4b090;               --footer-tagline: rgba(212,176,144,0.7);
+    --footer-text:    rgba(212,176,144,0.7); --footer-link:    rgba(212,176,144,0.7);
+    --footer-link-hover:#f5f0eb;             --footer-heading: #d4b090;
+    --footer-social-border:#4a3c32;          --footer-social-text:rgba(212,176,144,0.7);
+    --footer-social-hover:#d4b090;           --footer-copy:    rgba(212,176,144,0.5);
+    --sidemenu-bg:    #ffffff;               --sidemenu-border:#ddd0c0;
+    --sidemenu-overlay:rgba(58,46,38,0.5);   --sidemenu-avatar-border:#b5522a;
+    --sidemenu-avatar-bg:#ede8e0;            --sidemenu-avatar-text:#b5522a;
+    --sidemenu-name:  #3a2e26;               --sidemenu-sub:   #9a8070;
+    --sidemenu-tier:  #b5522a;               --sidemenu-label: #9a8070;
+    --sidemenu-rule:  #ddd0c0;               --sidemenu-link-hover:rgba(181,82,42,0.06);
+    --sidemenu-icon-bg:rgba(181,82,42,0.08); --sidemenu-icon-border:rgba(181,82,42,0.15);
+    --sidemenu-link-label:#3a2e26;           --sidemenu-link-desc:#9a8070;
+    --sidemenu-chevron:#9a8070;              --sidemenu-footer-border:#ddd0c0;
+    --modal-bg:       #ffffff;               --modal-overlay:  rgba(58,46,38,0.55);
+    --modal-border:   #ddd0c0;               --modal-header-bg:#f5f0eb;
+    --input-bg:       #ede8e0;               --input-border:   #ccc0aa;
+    --input-border-focus:#b5522a;            --input-text:     #3a2e26;
+    --input-placeholder:#b0988a;             --tab-inactive:   #9a8070;
+    --tab-active:     #b5522a;               --tab-underline:  #b5522a;
+    --social-bg:      #ede8e0;               --social-border:  #ccc0aa;
+    --social-text:    #3a2e26;               --social-hover-border:#b5522a;
+    --link-color:     #b5522a;               --checkbox-accent:#b5522a;
+    --error-color:    #b53a2a;               --success-color:  #2d7a3a;
+    --scroll-btn-bg:  #b5522a;               --scroll-btn-text:#f5f0eb;
+    --scroll-btn-hover:#943e1e;              --scroll-btn-shadow:rgba(181,82,42,0.3);
+    --focus-ring:     #b5522a;
+
+
+  }
+  
+  
+  /* ============================================================
+     2. RESETS & BASE
+     ============================================================ */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: var(--page-bg);
+    color: var(--page-text);
+    font-family: var(--font-body), 'Jost', sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), 'Cormorant Garamond', serif;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+  
+  
+  /* ============================================================
+     3. GLOBAL KEYFRAME ANIMATIONS
+     ============================================================ */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+  
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  
+  @keyframes drawCheck {
+    from { stroke-dashoffset: 100; }
+    to   { stroke-dashoffset: 0; }
+  }
+  
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  

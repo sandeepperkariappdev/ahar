@@ -2,10 +2,10 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, 0.96);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--gold-dim);
+  border-bottom: 1px solid var(--nav-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,7 +46,7 @@
   font-size: 22px;
   font-weight: 500;
   letter-spacing: 0.25em;
-  color: var(--gold);
+  color: var(--nav-logo);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -75,12 +75,12 @@
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--nav-link);
   transition: color 150ms;
 }
 
 .desktopLinks a:hover {
-  color: var(--gold);
+  color: var(--nav-link-active);
 }
 
 .icons {
@@ -93,7 +93,7 @@
   position: relative;
   width: 20px;
   height: 20px;
-  color: var(--cream);
+  color: var(--nav-icon);
   opacity: 0.8;
   cursor: pointer;
   background: none;
@@ -117,8 +117,8 @@
   right: -6px;
   width: 16px;
   height: 16px;
-  background: var(--gold);
-  color: var(--black);
+  background: var(--nav-badge-bg);
+  color: var(--nav-badge-text);
   border-radius: 50%;
   font-size: 9px;
   font-weight: 700;
@@ -129,3 +129,38 @@
 }
 
 
+/*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILE 1 — src/components/layout/Navbar.module.css
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Make these exact replacements:
+
+  background: rgba(10,10,10,0.96)               [on .nav]
+  → background: var(--nav-bg)
+
+  border-bottom: 1px solid var(--gold-dim)      [on .nav]
+  → border-bottom: 1px solid var(--nav-border)
+
+  color: var(--gold)                            [on .logo]
+  → color: var(--nav-logo)
+
+  color: var(--muted)                           [on .desktopLinks a]
+  → color: var(--nav-link)
+
+  color: var(--gold)                            [on .desktopLinks a:hover]
+  → color: var(--nav-link-active)
+
+  color: var(--cream)                           [on .iconBtn]
+  → color: var(--nav-icon)
+
+  background: var(--gold)                       [on .cartBadge]
+  → background: var(--nav-badge-bg)
+
+  color: var(--black)                           [on .cartBadge]
+  → color: var(--nav-badge-text)
+
+  color: var(--gold)                            [on .signInBtn]
+  → color: var(--nav-signin)
+
+*/

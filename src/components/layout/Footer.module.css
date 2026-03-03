@@ -1,6 +1,6 @@
 .footer {
-  background: var(--black);
-  border-top: 1px solid var(--border);
+  background: var(--footer-bg);
+  border-top: 1px solid var(--footer-border);
   padding: 48px 24px 32px;
 }
 
@@ -19,7 +19,7 @@
 
 @media (max-width: 1023px) {
   .col + .col {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--footer-border);
     padding-top: 32px;
   }
 }
@@ -29,7 +29,7 @@
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 0.25em;
-  color: var(--gold);
+  color: var(--footer-brand);
   margin-bottom: 8px;
 }
 
@@ -37,14 +37,14 @@
   font-family: var(--font-display), serif;
   font-style: italic;
   font-size: 13px;
-  color: var(--muted);
+  color: var(--footer-tagline);
   margin-bottom: 16px;
 }
 
 .brandAddress {
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
-  color: var(--muted);
+  color: var(--footer-text);
   line-height: 1.8;
 }
 
@@ -53,7 +53,7 @@
   font-size: 9px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--footer-heading);
   margin-bottom: 16px;
 }
 
@@ -66,18 +66,18 @@
 .navLinks a {
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
-  color: var(--muted);
+  color: var(--footer-link);
   transition: color 150ms;
 }
 
 .navLinks a:hover {
-  color: var(--cream);
+  color: var(--footer-link-hover);
 }
 
 .connectText {
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
-  color: var(--muted);
+  color: var(--footer-text);
   line-height: 1.6;
   margin-bottom: 16px;
 }
@@ -92,9 +92,8 @@
   font-family: var(--font-body), sans-serif;
   font-size: 9px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  border: 1px solid var(--border2);
+  text-transform: uppercase;  
+  border: 1px solid var(--footer-social-border);
   padding: 8px 16px;
   border-radius: 2px;
   cursor: pointer;
@@ -103,13 +102,13 @@
 }
 
 .socialBtn:hover {
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--footer-social-hover);
+  color: var(--footer-social-hover);
 }
 
 .bottom {
   padding-top: 24px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--footer-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -120,7 +119,7 @@
 .copy {
   font-family: var(--font-body), sans-serif;
   font-size: 10px;
-  color: var(--muted);
+  color: var(--footer-copy);
 }
 
 .legalLinks {
@@ -131,11 +130,73 @@
 .legalLinks a {
   font-family: var(--font-body), sans-serif;
   font-size: 10px;
-  color: var(--muted);
+  color: var(--footer-link);
   transition: color 150ms;
 }
 
 .legalLinks a:hover {
-  color: var(--cream);
+  color: var(--footer-link-hover);
 }
+/*
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILE 2 — src/components/layout/Footer.module.css
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Make these exact replacements:
+
+  background: var(--black)                      [on .footer]
+  → background: var(--footer-bg)
+
+  border-top: 1px solid var(--border)           [on .footer]
+  → border-top: 1px solid var(--footer-border)
+
+  border-top: 1px solid var(--border)           [on .col + .col — mobile separator]
+  → border-top: 1px solid var(--footer-border)
+
+  color: var(--gold)                            [on .brandName]
+  → color: var(--footer-brand)
+
+  color: var(--muted)                           [on .brandTagline]
+  → color: var(--footer-tagline)
+
+  color: var(--muted)                           [on .brandAddress]
+  → color: var(--footer-text)
+
+  color: var(--gold)                            [on .colHeading]
+  → color: var(--footer-heading)
+
+  color: var(--muted)                           [on .navLinks a]
+  → color: var(--footer-link)
+
+  color: var(--cream)                           [on .navLinks a:hover]
+  → color: var(--footer-link-hover)
+
+  color: var(--muted)                           [on .connectText]
+  → color: var(--footer-text)
+
+  border: 1px solid var(--border2)              [on .socialBtn]
+  → border: 1px solid var(--footer-social-border)
+
+  color: var(--muted)                           [on .socialBtn]
+  → color: var(--footer-social-text)
+
+  border-color: var(--gold)                     [on .socialBtn:hover]
+  → border-color: var(--footer-social-hover)
+
+  color: var(--gold)                            [on .socialBtn:hover]
+  → color: var(--footer-social-hover)
+
+  border-top: 1px solid var(--border)           [on .bottom]
+  → border-top: 1px solid var(--footer-border)
+
+  color: var(--muted)                           [on .copy]
+  → color: var(--footer-copy)
+
+  color: var(--muted)                           [on .legalLinks a]
+  → color: var(--footer-link)
+
+  color: var(--cream)                           [on .legalLinks a:hover]
+  → color: var(--footer-link-hover)
+
+*/

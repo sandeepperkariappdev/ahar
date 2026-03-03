@@ -16,7 +16,7 @@
 .bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #1a1209 0%, #0d0d0d 40%, #0a0a0a 100%);
+  background: linear-gradient(160deg, var(--hero-bg-from) 0%, var(--hero-bg-mid) 40%, var(--hero-bg-to) 100%);
 }
 
 .bg::before {
@@ -67,8 +67,8 @@
   font-family: var(--font-body), sans-serif;
   font-size: 10px;
   letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold);
+  text-transform: uppercase;  
+  color: var(--hero-eyebrow);
   margin-bottom: 16px;
 }
 
@@ -76,8 +76,8 @@
   font-family: var(--font-display), serif;
   font-size: 52px;
   font-weight: 300;
-  letter-spacing: 0.35em;
-  color: var(--cream);
+  letter-spacing: 0.35em;  
+  color: var(--hero-title);
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -115,11 +115,11 @@
 .dividerLine {
   width: 48px;
   height: 1px;
-  background: var(--gold-dim);
+  background: var(--hero-divider-line);
 }
 
-.dividerSymbol {
-  color: var(--gold);
+.dividerSymbol {  
+  color: var(--hero-divider-symbol);
   font-size: 14px;
 }
 
@@ -133,9 +133,9 @@
 .btnGold {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  background: var(--gold);
-  color: var(--black);
+  justify-content: center;  
+  background: var(--btn-primary-bg);  
+  color: var(--btn-primary-text);
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -149,32 +149,83 @@
   white-space: nowrap;
 }
 
-.btnGold:hover {
-  background: var(--gold-light);
+.btnGold:hover {  
+  background: var(--btn-primary-hover);
 }
 
 .btnOutline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  color: var(--gold);
+  background: transparent;  
+  color: var(--btn-outline-text);
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 13px 28px;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--btn-outline-border);
   cursor: pointer;
   border-radius: 2px;
   transition: all 200ms;
   white-space: nowrap;
 }
 
-.btnOutline:hover {
-  background: var(--gold);
-  color: var(--black);
+.btnOutline:hover {  
+  background: var(--btn-outline-hover-bg);  
+  color: var(--btn-outline-hover-text);
 }
 
 
+/*
+Make these exact replacements:
+
+ background: linear-gradient(160deg, #1a1209 0%, #0d0d0d 40%, #0a0a0a 100%)
+  → background: linear-gradient(160deg, var(--hero-bg-from) 0%, var(--hero-bg-mid) 40%, var(--hero-bg-to) 100%)
+  rgba(212,175,55,0.08)   [inside .bg::before]
+  → var(--hero-glow-primary)
+
+  rgba(212,175,55,0.05)   [inside .bg::before]
+  → var(--hero-glow-secondary)
+
+  rgba(212,175,55,0.02)   [inside .bg::after, appears twice]
+  → var(--hero-grid-line)
+
+  color: var(--gold)      [on .eyebrow]
+  → color: var(--hero-eyebrow)
+
+  color: var(--cream)     [on .title]
+  → color: var(--hero-title)
+
+  color: rgba(245,240,232,0.55)   [on .subtitle]
+  → color: var(--hero-subtitle)
+
+  background: var(--gold-dim)     [on .dividerLine]
+  → background: var(--hero-divider-line)
+
+  color: var(--gold)      [on .dividerSymbol]
+  → color: var(--hero-divider-symbol)
+
+  background: var(--gold)         [on .btnGold]
+  → background: var(--btn-primary-bg)
+
+  color: var(--black)             [on .btnGold]
+  → color: var(--btn-primary-text)
+
+  background: var(--gold-light)   [on .btnGold:hover]
+  → background: var(--btn-primary-hover)
+
+  border: 1px solid var(--gold)   [on .btnOutline]
+  → border: 1px solid var(--btn-outline-border)
+
+  color: var(--gold)              [on .btnOutline]
+  → color: var(--btn-outline-text)
+
+  background: var(--gold)         [on .btnOutline:hover]
+  → background: var(--btn-outline-hover-bg)
+
+  color: var(--black)             [on .btnOutline:hover]
+  → color: var(--btn-outline-hover-text)
+
+*/

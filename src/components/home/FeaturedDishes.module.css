@@ -1,6 +1,6 @@
 .section {
-  padding: 56px 24px;
-  background: var(--black);
+  padding: 56px 24px;  
+  background: var(--section-bg);
 }
 
 .head {
@@ -13,7 +13,7 @@
   font-size: 10px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--section-eyebrow);
   margin-bottom: 12px;
 }
 
@@ -22,7 +22,7 @@
   font-size: 26px;
   font-weight: 400;
   letter-spacing: 0.08em;
-  color: var(--cream);
+  color: var(--section-title);
   margin-bottom: 12px;
 }
 
@@ -35,7 +35,7 @@
 .rule {
   width: 40px;
   height: 1px;
-  background: var(--gold);
+  background: var(--section-rule);
   margin: 0 auto;
 }
 
@@ -59,8 +59,8 @@
 }
 
 .card {
-  background: var(--charcoal);
-  border: 1px solid var(--border);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 3px;
   overflow: hidden;
   cursor: pointer;
@@ -68,19 +68,14 @@
 }
 
 .card:hover {
-  border-color: var(--gold-dim);
+  border-color: var(--card-border-hover);
   transform: translateY(-2px);
 }
 
 .imgArea {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(
-    135deg,
-    #1e1a10 0%,
-    #2a2010 50%,
-    #1a1505 100%
-  );
+  background: linear-gradient(135deg, var(--card-img-from) 0%, var(--card-img-to) 100%);
   position: relative;
   display: flex;
   align-items: center;
@@ -100,7 +95,7 @@
   background: linear-gradient(
     to bottom,
     transparent 50%,
-    rgba(10, 10, 10, 0.6) 100%
+    var(--card-img-overlay) 100%
   );
 }
 
@@ -112,14 +107,14 @@
   font-family: var(--font-display), serif;
   font-size: 17px;
   font-weight: 500;
-  color: var(--cream);
+  color: var(--card-name);
   margin-bottom: 4px;
   letter-spacing: 0.03em;
 }
 
 .desc {
   font-size: 11px;
-  color: var(--muted);
+  color: var(--card-desc);
   line-height: 1.5;
   margin-bottom: 10px;
   display: -webkit-box;
@@ -138,13 +133,13 @@
   font-family: var(--font-display), serif;
   font-size: 15px;
   font-weight: 500;
-  color: var(--gold);
+  color: var(--card-price);
 }
 
 .rating {
   font-family: var(--font-body), sans-serif;
   font-size: 10px;
-  color: var(--muted);
+  color: var(--card-rating);
 }
 
 .badges {
@@ -159,9 +154,9 @@
   padding: 2px 6px;
   border-radius: 2px;
   font-weight: 600;
-  background: rgba(46, 204, 113, 0.15);
-  color: #2ecc71;
-  border: 1px solid rgba(46, 204, 113, 0.3);
+  background: var(--badge-v-bg);
+  color: var(--badge-v-text);
+  border: 1px solid var(--badge-v-border);
   text-transform: uppercase;
 }
 
@@ -171,9 +166,9 @@
   padding: 2px 6px;
   border-radius: 2px;
   font-weight: 600;
-  background: rgba(212, 175, 55, 0.12);
-  color: var(--gold);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: var(--badge-gf-bg);
+  color: var(--badge-gf-text);
+  border: 1px solid var(--badge-gf-border);
   text-transform: uppercase;
 }
 
@@ -181,9 +176,9 @@
   width: 100%;
   margin-top: 12px;
   padding: 9px;
-  background: transparent;
-  border: 1px solid var(--border2);
-  color: var(--cream);
+  background: transparent;  
+  border: 1px solid var(--card-btn-border);
+  color: var(--card-btn-text);
   font-family: var(--font-body), sans-serif;
   font-size: 10px;
   letter-spacing: 0.15em;
@@ -194,9 +189,9 @@
 }
 
 .addBtn:hover {
-  background: var(--gold);
-  color: var(--black);
-  border-color: var(--gold);
+  background: var(--card-btn-hover-bg);
+  color: var(--card-btn-hover-text);
+  border-color: var(--card-btn-hover-bg);
 }
 
 .footer {
@@ -208,20 +203,109 @@
   display: inline-flex;
   align-items: center;
   background: transparent;
-  color: var(--gold);
+  color: var(--btn-outline-text);
   font-family: var(--font-body), sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 13px 28px;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--btn-outline-border);
   border-radius: 2px;
   transition: all 200ms;
 }
 
 .viewAll:hover {
-  background: var(--gold);
-  color: var(--black);
+  background: var(--btn-outline-hover-bg);
+  color: var(--btn-outline-hover-text);
 }
+/*
+Make these exact replacements:
 
+  background: var(--black)        [on .section]
+  → background: var(--section-bg)
+
+  color: var(--gold)              [on .eyebrow]
+  → color: var(--section-eyebrow)
+
+  color: var(--cream)             [on .title]
+  → color: var(--section-title)
+
+  background: var(--gold)         [on .rule]
+  → background: var(--section-rule)
+
+  background: var(--charcoal)     [on .card]
+  → background: var(--card-bg)
+
+  border: 1px solid var(--border) [on .card]
+  → border: 1px solid var(--card-border)
+
+  border-color: var(--gold-dim)   [on .card:hover]
+  → border-color: var(--card-border-hover)
+
+  background: linear-gradient(135deg, #1e1a10 0%, #2a2010 50%, #1a1505 100%)   [on .imgArea]
+  → background: linear-gradient(135deg, var(--card-img-from) 0%, var(--card-img-to) 100%)
+
+  rgba(10,10,10,0.6)              [on .imgOverlay]
+  → var(--card-img-overlay)
+
+  color: var(--cream)             [on .name]
+  → color: var(--card-name)
+
+  color: var(--muted)             [on .desc]
+  → color: var(--card-desc)
+
+  color: var(--gold)              [on .price]
+  → color: var(--card-price)
+
+  color: var(--muted)             [on .rating]
+  → color: var(--card-rating)
+
+  border: 1px solid var(--border2)  [on .addBtn]
+  → border: 1px solid var(--card-btn-border)
+
+  color: var(--cream)             [on .addBtn]
+  → color: var(--card-btn-text)
+
+  background: var(--gold)         [on .addBtn:hover]
+  → background: var(--card-btn-hover-bg)
+
+  color: var(--black)             [on .addBtn:hover]
+  → color: var(--card-btn-hover-text)
+
+  border-color: var(--gold)       [on .addBtn:hover]
+  → border-color: var(--card-btn-hover-bg)
+
+  background: rgba(46,204,113,0.15)   [on .badgeV]
+  → background: var(--badge-v-bg)
+
+  color: #2ecc71                  [on .badgeV]
+  → color: var(--badge-v-text)
+
+  border: 1px solid rgba(46,204,113,0.3)  [on .badgeV]
+  → border: 1px solid var(--badge-v-border)
+
+  background: rgba(212,175,55,0.12)   [on .badgeGF]
+  → background: var(--badge-gf-bg)
+
+  color: var(--gold)              [on .badgeGF]
+  → color: var(--badge-gf-text)
+
+  border: 1px solid rgba(212,175,55,0.3)  [on .badgeGF]
+  → border: 1px solid var(--badge-gf-border)
+
+  background: linear-gradient(90deg, var(--charcoal) 25%, var(--charcoal2) 50%, var(--charcoal) 75%)   [on .shimmer]
+  → background: linear-gradient(90deg, var(--shimmer-from) 25%, var(--shimmer-to) 50%, var(--shimmer-from) 75%)
+
+  border: 1px solid var(--gold)   [on .viewAll]
+  → border: 1px solid var(--btn-outline-border)
+
+  color: var(--gold)              [on .viewAll]
+  → color: var(--btn-outline-text)
+
+  background: var(--gold)         [on .viewAll:hover]
+  → background: var(--btn-outline-hover-bg)
+
+  color: var(--black)             [on .viewAll:hover]
+  → color: var(--btn-outline-hover-text)
+*/

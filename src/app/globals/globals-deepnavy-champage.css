@@ -1,0 +1,327 @@
+/*:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --black: #0a0a0a;
+  --charcoal: #1a1a1a;
+  --charcoal2: #222222;
+  --gold: #d4af37;
+  --gold-light: #e8c547;
+  --gold-dim: #b8960c;
+  --gold-glow: rgba(212, 175, 55, 0.18);
+  --cream: #f5f0e8;
+  --muted: #888888;
+  --border: #2a2a2a;
+  --border2: #333333;
+  --red: #c0392b;
+  --green: #2ecc71;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f5f0e8;
+  font-family: "Jost", sans-serif;
+} 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200%;
+  }
+  to {
+    background-position: 200%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes drawCheck {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}*/
+/* ============================================================
+   AHAR — globals.css
+   THEME SYSTEM: Change colors here only. Every component
+   references these tokens via var(). Nothing else needs editing.
+   ============================================================ */
+
+/* ── Google Fonts are loaded via next/font in layout.js ── */
+
+/* ============================================================
+   1. DESIGN TOKENS — THE SINGLE SOURCE OF TRUTH
+   ============================================================ */
+
+
+   /*Deep Navy Champage*/
+   :root {
+    --gold:           #c9a96e;  --gold-light:     #dbbe8a;  --gold-dim:       #e8d8b0;
+    --gold-glow:      rgba(201,169,110,0.18);
+    --black:          #f4f2ee;  --charcoal:       #ffffff;  --charcoal2:      #ede9e2;
+    --cream:          #1b2a4a;  --muted:          #8c9cb8;
+    --border:         #ddd9d0;  --border2:        #cccac0;
+    --red:            #a02820;  --green:          #1e6b3a;
+    --page-bg:        var(--black);           --page-text:      var(--cream);
+    --announce-bg:    #1b2a4a;               --announce-text:  #c9a96e;
+    --nav-bg:         rgba(244,242,238,0.96); --nav-border:     #e8d8b0;
+    --nav-logo:       #1b2a4a;               --nav-link:       #8c9cb8;
+    --nav-link-active:#c9a96e;               --nav-icon:       #1b2a4a;
+    --nav-badge-bg:   #c9a96e;               --nav-badge-text: #1b2a4a;
+    --nav-signin:     #c9a96e;
+    --hero-bg-from:   #eceae4;  --hero-bg-mid:    #f0eee8;  --hero-bg-to:     #f4f2ee;
+    --hero-glow-primary:rgba(201,169,110,0.07);--hero-glow-secondary:rgba(27,42,74,0.04);
+    --hero-grid-line: rgba(27,42,74,0.02);   --hero-eyebrow:   #c9a96e;
+    --hero-title:     #1b2a4a;               --hero-subtitle:  rgba(27,42,74,0.55);
+    --hero-divider-line:#e8d8b0;             --hero-divider-symbol:#c9a96e;
+    --btn-primary-bg: #c9a96e;               --btn-primary-text:#1b2a4a;
+    --btn-primary-hover:#a88848;             --btn-outline-border:#1b2a4a;
+    --btn-outline-text:#1b2a4a;              --btn-outline-hover-bg:#1b2a4a;
+    --btn-outline-hover-text:#f4f2ee;
+    --section-bg:     #f4f2ee;               --section-alt-bg: #ede9e2;
+    --section-eyebrow:#c9a96e;               --section-title:  #1b2a4a;
+    --section-rule:   #c9a96e;
+    --card-bg:        #ffffff;               --card-border:    #ddd9d0;
+    --card-border-hover:#c9a96e;             --card-img-from:  #e8e4dc;
+    --card-img-to:    #ddd9d0;               --card-img-overlay:rgba(244,242,238,0.4);
+    --card-name:      #1b2a4a;               --card-desc:      #8c9cb8;
+    --card-price:     #c9a96e;               --card-rating:    #8c9cb8;
+    --card-btn-border:#ddd9d0;               --card-btn-text:  #1b2a4a;
+    --card-btn-hover-bg:#c9a96e;             --card-btn-hover-text:#1b2a4a;
+    --badge-v-bg:     rgba(30,107,58,0.10);  --badge-v-text:   #1e6b3a;
+    --badge-v-border: rgba(30,107,58,0.22);  --badge-gf-bg:    rgba(201,169,110,0.12);
+    --badge-gf-text:  #9a7c4a;               --badge-gf-border:rgba(201,169,110,0.28);
+    --shimmer-from:   #ede9e2;               --shimmer-to:     #e4e0d8;
+    --review-section-bg:#ede9e2;             --review-card-bg: #ffffff;
+    --review-card-border:#ddd9d0;            --review-quote-char:#e8d8b0;
+    --review-text:    #1b2a4a;               --review-stars:   #c9a96e;
+    --review-author:  #8c9cb8;               --review-author-name:#c9a96e;
+    --cta-bg-from:    #ede9e2;               --cta-bg-to:      #e4e0d8;
+    --cta-border-top: #ddd9d0;               --cta-eyebrow:    #c9a96e;
+    --cta-title:      #1b2a4a;               --cta-sub:        #8c9cb8;
+    --cta-rule:       #c9a96e;
+    --footer-bg:      #1b2a4a;               --footer-border:  #2d4070;
+    --footer-brand:   #c9a96e;               --footer-tagline: rgba(140,156,184,0.8);
+    --footer-text:    rgba(140,156,184,0.8); --footer-link:    rgba(140,156,184,0.8);
+    --footer-link-hover:#f4f2ee;             --footer-heading: #c9a96e;
+    --footer-social-border:#2d4070;          --footer-social-text:rgba(140,156,184,0.8);
+    --footer-social-hover:#c9a96e;           --footer-copy:    rgba(140,156,184,0.5);
+    --sidemenu-bg:    #ffffff;               --sidemenu-border:#ddd9d0;
+    --sidemenu-overlay:rgba(27,42,74,0.5);   --sidemenu-avatar-border:#c9a96e;
+    --sidemenu-avatar-bg:#ede9e2;            --sidemenu-avatar-text:#1b2a4a;
+    --sidemenu-name:  #1b2a4a;               --sidemenu-sub:   #8c9cb8;
+    --sidemenu-tier:  #c9a96e;               --sidemenu-label: #8c9cb8;
+    --sidemenu-rule:  #ddd9d0;               --sidemenu-link-hover:rgba(201,169,110,0.07);
+    --sidemenu-icon-bg:rgba(201,169,110,0.09);--sidemenu-icon-border:rgba(201,169,110,0.18);
+    --sidemenu-link-label:#1b2a4a;           --sidemenu-link-desc:#8c9cb8;
+    --sidemenu-chevron:#8c9cb8;              --sidemenu-footer-border:#ddd9d0;
+    --modal-bg:       #ffffff;               --modal-overlay:  rgba(27,42,74,0.55);
+    --modal-border:   #ddd9d0;               --modal-header-bg:#f4f2ee;
+    --input-bg:       #ede9e2;               --input-border:   #cccac0;
+    --input-border-focus:#c9a96e;            --input-text:     #1b2a4a;
+    --input-placeholder:#9caabb;             --tab-inactive:   #8c9cb8;
+    --tab-active:     #c9a96e;               --tab-underline:  #c9a96e;
+    --social-bg:      #ede9e2;               --social-border:  #cccac0;
+    --social-text:    #1b2a4a;               --social-hover-border:#c9a96e;
+    --link-color:     #c9a96e;               --checkbox-accent:#1b2a4a;
+    --error-color:    #a02820;               --success-color:  #1e6b3a;
+    --scroll-btn-bg:  #c9a96e;               --scroll-btn-text:#1b2a4a;
+    --scroll-btn-hover:#a88848;              --scroll-btn-shadow:rgba(201,169,110,0.3);
+    --focus-ring:     #c9a96e;
+
+
+  }
+  
+  
+  /* ============================================================
+     2. RESETS & BASE
+     ============================================================ */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: var(--page-bg);
+    color: var(--page-text);
+    font-family: var(--font-body), 'Jost', sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), 'Cormorant Garamond', serif;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+  
+  
+  /* ============================================================
+     3. GLOBAL KEYFRAME ANIMATIONS
+     ============================================================ */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+  
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  
+  @keyframes drawCheck {
+    from { stroke-dashoffset: 100; }
+    to   { stroke-dashoffset: 0; }
+  }
+  
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  

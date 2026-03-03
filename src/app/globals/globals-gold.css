@@ -1,0 +1,436 @@
+/*:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --black: #0a0a0a;
+  --charcoal: #1a1a1a;
+  --charcoal2: #222222;
+  --gold: #d4af37;
+  --gold-light: #e8c547;
+  --gold-dim: #b8960c;
+  --gold-glow: rgba(212, 175, 55, 0.18);
+  --cream: #f5f0e8;
+  --muted: #888888;
+  --border: #2a2a2a;
+  --border2: #333333;
+  --red: #c0392b;
+  --green: #2ecc71;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #f5f0e8;
+  font-family: "Jost", sans-serif;
+} 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 3px;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200%;
+  }
+  to {
+    background-position: 200%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes drawCheck {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}*/
+/* ============================================================
+   AHAR — globals.css
+   THEME SYSTEM: Change colors here only. Every component
+   references these tokens via var(). Nothing else needs editing.
+   ============================================================ */
+
+/* ── Google Fonts are loaded via next/font in layout.js ── */
+
+/* ============================================================
+   1. DESIGN TOKENS — THE SINGLE SOURCE OF TRUTH
+   ============================================================ */
+   :root {
+
+    /* ── Brand Palette ── */
+    --gold:           #d4af37;
+    --gold-light:     #e8c547;
+    --gold-dim:       #b8960c;
+    --gold-glow:      rgba(212, 175, 55, 0.18);
+  
+    /* ── Surface Colors ── */
+    --black:          #0a0a0a;   /* page background */
+    --charcoal:       #1a1a1a;   /* card / section alt background */
+    --charcoal2:      #222222;   /* input background, avatar bg */
+  
+    /* ── Text Colors ── */
+    --cream:          #f5f0e8;   /* primary text */
+    --muted:          #888888;   /* secondary / subdued text */
+  
+    /* ── Border Colors ── */
+    --border:         #2a2a2a;   /* subtle border */
+    --border2:        #333333;   /* slightly stronger border */
+  
+    /* ── Status Colors ── */
+    --red:            #c0392b;
+    --green:          #2ecc71;
+  
+    /* ── Semantic Aliases (Home Page Sections) ──
+       These map section roles to palette tokens.
+       To retheme a single section, change the alias below
+       without touching the component file at all.           */
+  
+    /* Page */
+    --page-bg:               var(--black);
+    --page-text:             var(--cream);
+  
+    /* Announcement bar */
+    --announce-bg:           var(--gold);
+    --announce-text:         var(--black);
+  
+    /* Navbar */
+    --nav-bg:                rgba(10, 10, 10, 0.96);
+    --nav-border:            var(--gold-dim);
+    --nav-logo:              var(--gold);
+    --nav-link:              var(--muted);
+    --nav-link-active:       var(--gold);
+    --nav-icon:              var(--cream);
+    --nav-badge-bg:          var(--gold);
+    --nav-badge-text:        var(--black);
+    --nav-signin:            var(--gold);
+  
+    /* Hero */
+    --hero-bg-from:          #1a1209;
+    --hero-bg-mid:           #0d0d0d;
+    --hero-bg-to:            #0a0a0a;
+    --hero-glow-primary:     rgba(212, 175, 55, 0.08);
+    --hero-glow-secondary:   rgba(212, 175, 55, 0.05);
+    --hero-grid-line:        rgba(212, 175, 55, 0.02);
+    --hero-eyebrow:          var(--gold);
+    --hero-title:            var(--cream);
+    --hero-subtitle:         rgba(245, 240, 232, 0.55);
+    --hero-divider-line:     var(--gold-dim);
+    --hero-divider-symbol:   var(--gold);
+  
+    /* Buttons */
+    --btn-primary-bg:        var(--gold);
+    --btn-primary-text:      var(--black);
+    --btn-primary-hover:     var(--gold-light);
+    --btn-outline-border:    var(--gold);
+    --btn-outline-text:      var(--gold);
+    --btn-outline-hover-bg:  var(--gold);
+    --btn-outline-hover-text:var(--black);
+  
+    /* Section — Featured Dishes */
+    --section-bg:            var(--black);
+    --section-alt-bg:        var(--charcoal);
+    --section-eyebrow:       var(--gold);
+    --section-title:         var(--cream);
+    --section-rule:          var(--gold);
+  
+    /* Dish Cards */
+    --card-bg:               var(--charcoal);
+    --card-border:           var(--border);
+    --card-border-hover:     var(--gold-dim);
+    --card-img-from:         #1e1a10;
+    --card-img-to:           #2a2010;
+    --card-img-overlay:      rgba(10, 10, 10, 0.6);
+    --card-name:             var(--cream);
+    --card-desc:             var(--muted);
+    --card-price:            var(--gold);
+    --card-rating:           var(--muted);
+    --card-btn-border:       var(--border2);
+    --card-btn-text:         var(--cream);
+    --card-btn-hover-bg:     var(--gold);
+    --card-btn-hover-text:   var(--black);
+    --badge-v-bg:            rgba(46, 204, 113, 0.15);
+    --badge-v-text:          var(--green);
+    --badge-v-border:        rgba(46, 204, 113, 0.3);
+    --badge-gf-bg:           rgba(212, 175, 55, 0.12);
+    --badge-gf-text:         var(--gold);
+    --badge-gf-border:       rgba(212, 175, 55, 0.3);
+  
+    /* Skeleton shimmer */
+    --shimmer-from:          var(--charcoal);
+    --shimmer-to:            var(--charcoal2);
+  
+    /* Reviews Strip */
+    --review-section-bg:     var(--charcoal);
+    --review-card-bg:        var(--black);
+    --review-card-border:    var(--border);
+    --review-quote-char:     var(--gold);
+    --review-text:           var(--cream);
+    --review-stars:          var(--gold);
+    --review-author:         var(--muted);
+    --review-author-name:    var(--gold);
+  
+    /* CTA Banner */
+    --cta-bg-from:           var(--charcoal);
+    --cta-bg-to:             #100e08;
+    --cta-border-top:        var(--border);
+    --cta-eyebrow:           var(--gold);
+    --cta-title:             var(--cream);
+    --cta-sub:               var(--muted);
+    --cta-rule:              var(--gold);
+  
+    /* Footer */
+    --footer-bg:             var(--black);
+    --footer-border:         var(--border);
+    --footer-brand:          var(--gold);
+    --footer-tagline:        var(--muted);
+    --footer-text:           var(--muted);
+    --footer-link:           var(--muted);
+    --footer-link-hover:     var(--cream);
+    --footer-heading:        var(--gold);
+    --footer-social-border:  var(--border2);
+    --footer-social-text:    var(--muted);
+    --footer-social-hover:   var(--gold);
+    --footer-copy:           var(--muted);
+  
+    /* Side Menu */
+    --sidemenu-bg:           var(--charcoal);
+    --sidemenu-border:       var(--border2);
+    --sidemenu-overlay:      rgba(0, 0, 0, 0.7);
+    --sidemenu-avatar-border:var(--gold);
+    --sidemenu-avatar-bg:    var(--charcoal2);
+    --sidemenu-avatar-text:  var(--gold);
+    --sidemenu-name:         var(--cream);
+    --sidemenu-sub:          var(--muted);
+    --sidemenu-tier:         var(--gold);
+    --sidemenu-label:        var(--muted);
+    --sidemenu-rule:         var(--border);
+    --sidemenu-link-hover:   rgba(212, 175, 55, 0.06);
+    --sidemenu-icon-bg:      rgba(212, 175, 55, 0.08);
+    --sidemenu-icon-border:  rgba(212, 175, 55, 0.12);
+    --sidemenu-link-label:   var(--cream);
+    --sidemenu-link-desc:    var(--muted);
+    --sidemenu-chevron:      var(--muted);
+    --sidemenu-footer-border:var(--border);
+  
+    /* Auth Modal */
+    --modal-bg:              var(--charcoal);
+    --modal-overlay:         rgba(0, 0, 0, 0.75);
+    --modal-border:          var(--border);
+    --modal-header-bg:       #0f0d08;
+    --input-bg:              var(--charcoal2);
+    --input-border:          var(--border2);
+    --input-border-focus:    var(--gold);
+    --input-text:            var(--cream);
+    --input-placeholder:     #666666;
+    --tab-inactive:          var(--muted);
+    --tab-active:            var(--gold);
+    --tab-underline:         var(--gold);
+    --social-bg:             var(--charcoal2);
+    --social-border:         var(--border2);
+    --social-text:           var(--cream);
+    --social-hover-border:   var(--gold-dim);
+    --link-color:            var(--gold);
+    --checkbox-accent:       var(--gold);
+    --error-color:           #e74c3c;
+    --success-color:         var(--green);
+  
+    /* Scroll-to-top */
+    --scroll-btn-bg:         var(--gold);
+    --scroll-btn-text:       var(--black);
+    --scroll-btn-hover:      var(--gold-light);
+    --scroll-btn-shadow:     rgba(212, 175, 55, 0.3);
+  
+    /* Focus ring */
+    --focus-ring:            var(--gold);
+  }
+  
+  
+  /* ============================================================
+     2. RESETS & BASE
+     ============================================================ */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: var(--page-bg);
+    color: var(--page-text);
+    font-family: var(--font-body), 'Jost', sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), 'Cormorant Garamond', serif;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+  
+  
+  /* ============================================================
+     3. GLOBAL KEYFRAME ANIMATIONS
+     ============================================================ */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+  
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  
+  @keyframes drawCheck {
+    from { stroke-dashoffset: 100; }
+    to   { stroke-dashoffset: 0; }
+  }
+  
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  
