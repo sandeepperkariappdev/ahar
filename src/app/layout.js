@@ -1,7 +1,7 @@
 //import "./globals.css";
 import "./globals/globals-ivory.css";
 import { Cormorant_Garamond, Jost } from "next/font/google";
-
+import { AuthProvider } from '@/context/AuthContext'
 const fontDisplay = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           minHeight: "100vh",
         }}
       >
-        {children}
+      <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

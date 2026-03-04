@@ -44,3 +44,45 @@ Once you make these swaps, switching the entire site from the current dark gold 
 --section-bg:     #faf8f4;   /* was var(--black) */
 --section-alt-bg: #f0ebe0;   /* was var(--charcoal) */
 --gold:           #c9a84c;   /* adjust accent to taste */
+
+┌─────────────────────────────────────────────────────────────┐
+│                     NEXT.JS 14 (Frontend)                   │
+│  • UI Components  • Redux Toolkit  • Middleware (route guard)│
+│  • No direct Supabase calls — only talks to Node API        │
+└───────────────────────────┬─────────────────────────────────┘
+                            │  HTTP / REST (JWT in headers)
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   NODE.JS API (Middle Layer)                 │
+│  • Express.js  • Auth routes  • JWT verification middleware  │
+│  • Business logic  • Role checks  • Supabase Admin SDK      │
+└───────────────────────────┬─────────────────────────────────┘
+                            │  Supabase Admin Client
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│                      SUPABASE                               │
+│  • Auth service  • PostgreSQL  • RLS policies               │
+└─────────────────────────────────────────────────────────────┘
+ Token Flow Architecture
+LOGIN REQUEST FLOW:
+──────────────────
+Next.js (form submit)
+    │
+    ▼ POST /api/auth/login  {email, password}
+Node.js
+    │── validates input
+    │── calls Supabase Auth
+    │── gets back { access_token, refresh_token, user }
+    │── returns tokens to Next.js
+    ▼
+Next.js
+    │── stores access_token in httpOnly cookie (via API response)
+    │── stores user in Redux
+    │
+    ▼ Subsequent API calls → Authorization: Bearer <access_token>
+Node.js
+    │── verifyToken middleware intercepts
+    │── verifies JWT with Supabase secret
+    │── attaches user to req.user
+    ▼
+    Route handler executes with authenticated context
